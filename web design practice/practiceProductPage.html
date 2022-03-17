@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /** global element styling **/
+
+@import 'https://fonts.googleapis.com/css?family=Lato:400,700';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eee;
+  font-family: 'Lato', sans-serif;
+}
+
+#page-wrapper {
+  position: relative;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+/** global classes styling **/
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 0 20px;
+  height: 40px;
+  font-size: 1em;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 3px black solid;
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.grid {
+  display: flex;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  min-height: 75px;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #eee;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-wrap: wrap;
+  }
+}
+
+.logo {
+  width: 60vw;
+}
+
+@media (max-width: 650px) {
+  .logo {
+    margin-top: 15px;
+    width: 100%;
+    position: relative;
+  }
+}
+
+.logo > img {
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 20px;
+}
+
+@media (max-width: 650px) {
+  .logo > img {
+    margin: 0 auto;
+  }
+}
+
+nav {
+  font-weight: 400;
+}
+
+@media (max-width: 650px) {
+  nav {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 50px;
+  }
+  nav li {
+    padding-bottom: 5px;
+  }
+}
+
+nav > ul {
+  width: 35vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@media (max-width: 650px) {
+  nav > ul {
+    flex-direction: column;
+  }
+}
+
+#comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  text-align: left;
+  height: 200px;
+  margin-top: 50px;
+}
+
+#comments > h2 {
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+#comments input[type='email'] {
+  max-width: 275px;
+  width: 100%;
+  padding: 5px;
+}
+
+#comments input[type='submit'] {
+  max-width: 150px;
+  width: 100%;
+  height: 30px;
+  margin: 15px 0;
+  border: 0;
+  background-color: #f1c40f;
+}
+
+#comments input[type='submit']:hover {
+  background-color: orange;
+  transition: background-color 1s;
+}
+
+@media (max-width: 650px) {
+  #comments {
+    margin-top: 120px;
+  }
+}
+
+#about-us {
+  margin-top: 100px;
+}
+
+#about-us .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 20vw;
+  color: darkorange;
+}
+
+@media (max-width: 550px) {
+  #about-us .icon {
+    display: none;
+  }
+}
+
+#about-us .desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  width: 80vw;
+  padding: 5px;
+}
+
+@media (max-width: 550px) {
+  #about-us .desc {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    height: 150px;
+  }
+}
+
+@media (max-width: 650px) {
+  #about-us {
+    margin-top: 0;
+  }
+}
+
+#product-info {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#product-info > iframe {
+  max-width: 560px;
+  width: 100%;
+}
+
+#pricing {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(100% / 3);
+  margin: 10px;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+.product > .level {
+  background-color: #ddd;
+  color: black;
+  padding: 15px 0;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.product > h2 {
+  margin-top: 15px;
+}
+
+.product > ol {
+  margin: 15px 0;
+}
+
+.product > ol > li {
+  padding: 5px 0;
+}
+
+.product > button {
+  border: 0;
+  margin: 15px 0;
+  background-color: #f1c40f;
+  font-weight: 400;
+}
+
+.product > button:hover {
+  background-color: orange;
+  transition: background-color 1s;
+}
+
+@media (max-width: 800px) {
+  #pricing {
+    flex-direction: column;
+  }
+  .product {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
+
+footer {
+  margin-top: 30px;
+  background-color: #ddd;
+  padding: 20px;
+}
+
+footer > ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer > ul > li {
+  padding: 0 10px;
+}
+
+footer > span {
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.9em;
+  color: #444;
+}
+
+</style>
+<body>
+    <nav id="navbar">
+        <header>shan</header>
+        <ul>
+          <li><a class="nav-link" href="#intro">intro</a></li>
+          <li>
+            <a class="nav-link" href="#about_me"
+              >about me</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="#hobbies">hobbies</a>
+          </li>
+          <li><a class="nav-link" href="#goals">goals</a></li>
+          <li><a class="nav-link" href="#fun_facts">fun facts</a></li>
+        </ul>
+      </nav>
+      <main id="main-doc">
+        
+        <section class="main-section" id="intro">
+          <header>intro</header>
+          <article>
+            <p>
+              this is a tech doc that freeCodeCamp has made as a project in order to get the certificate for the responsive web design course.
+            </p>
+            <p>
+              reasons why i am taking this course:
+            </p>
+            <ul>
+              <li>i want to learn how to code with minimal help</li>
+              <li>i want to be able to code from scratch, maybe make apps or websites that are functional</li>
+              <li>i want to enjoy coding</li>
+              <li>i want a job in tech after i graduate from uni</li>
+            </ul>
+            <p>
+              here are some patches of code that i can perform without much assistance:
+            </p>
+            <p>
+              python:
+            </p>
+            <code>print(hello world)<br></code>
+            <code>main()<br></code>
+            <code>return;<br></code>
+            <code>if repeat_check:<br></code>
+            <code>if in reach:<br></code>
+            <p>
+              these are literally the most simple lines of code
+            </p>
+          </article>
+        </section>
+        
+        <section class="main-section" id="about_me">
+          <header>about me</header>
+          <article>
+            <p>
+             shan, 23, asian-american, third daughter, 5'1", short brown hair, insecure about everything about herself
+            </p>
+            <p>
+              i am shan, 23, college student, i go to UCM, i am a fifth year because i change my major suddenly fall semester of my senior year. i was studying CS but wanted to pursue a path i have more interest in, cogsci, i like cogsci a lot but i still want to study CS but at my own pace since i realized in the 4 years i was a CS major, i wasnt learning the skills i need to be a real programmer and i was not a strong programmer. so i am taking my programming skills into my own hands and not rely on a schools curriculm to teach me. i did not have courses available for the CS path i had in mind, so i am doing it on my own, while still working to obtain my b.s. in cogsci.
+            </p>
+          </article>
+        </section>
+        
+        <section class="main-section" id="hobbies">
+          <header>hobbies</header>
+          <article>
+            <p>
+              some hobbies i have:
+            </p>
+            <ul>
+              <li>reading and collecting manga</li>
+              <li>wating anime</li>
+              <li>music; making and listening to</li>
+              <li>knitting</li>
+              <li>mechanical keyboards; building, using, and watching other people build them</li>
+              <li>PC builds; i havent yet been able to build my own, but i hope to very soon</li>
+              <li>photography</li>
+              <li>hiking, backpacking, and outdoor activities</li>
+            </ul>
+            <p>
+              i think i have a lot of hobbies and it does make me feel a little special thinking i probably have on average more hobbies than most, but it is also overwhelming having so many interests and not always being able to have time for everything
+            </p>
+          </article>  
+        </section>
+        
+        <section class="main-section" id="goals">
+          <header>goals</header>
+          <article>
+            <p>
+              i find i do not have too many goals, but here are a few:
+            </p>
+            <ul>
+              <li>graduate university</li>
+              <li>get a tech job</li>
+              <li>move in with boyfriend</li>
+              <li>build first PC</li>
+            </ul>
+            <p>
+              like i said not too many, im sure i will have more goals form in the future, but these are the only real goals i have right now, and the ones i want the most.
+            </p>
+          </article>
+        </section>
+        
+        <section class="main-section" id="fun_facts">
+          <header>fun facts</header>
+          <article>
+            <p>
+              here are some fun facts about me:
+            </p>
+            <ul>
+              <li>i have 2 cats, maple moo</li>
+              <li>i have a caffine addiction</li>
+              <li>my spotify recap each year shows i listen to no less than 40,000 mintues of music every year for the past 5 years</li>
+            </ul>
+            <p>
+              i find i do not have as many fun facts as i thought i would, sorry about that
+            </p>
+              </article>
+        </section>
+</body>
+</html>

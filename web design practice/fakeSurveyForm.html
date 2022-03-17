@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <h1 id="title" class="text-center">shan's survey form</h1>
+        <p id="description" class="description text-center">thank you for taking my survey!</p>
+      </header>
+      <form id="survey-form">
+        <div class="form-group">
+          <label id="name-label" for="name">name</label>
+          <input type="text" name="name" id="name" class="form-control" placeholder="enter your name" required/>
+        </div>
+          <div class="form-group">
+            <label id="email-label" for="email">email</label>
+            <input type="email" name="email" id="email" class="form-control" placeholder="enter your email" required/>
+        </div>
+        </div>
+          <div class="form-group">
+            <label id="number-label" for="number">age</label>
+            <input type="number" name="age" id="number" min="10" max="99" class="form-control" placeholder="age" required/>
+        </div>
+      <div class="form-group">
+            <p>what is your relationship with me?</p>
+            <select id="dropdown" name="role" class="form-control" required>
+              <option disabled selected value>select a relationship</option>
+              <option value="friend">friend</option>
+              <option value="partner">partner</option>
+              <option value="partent">parentr</option>
+              <option value="sibling">sibling</option>
+              <option value="other">other</option>
+            </select>
+          </div>
+      <div class="form-group">
+            <p>would you buy me coffee if i asked you to?</p>
+            <label>
+              <input name="user-recommend" value="definitely" type="radio" class="input-radio"checked/>definitely, no questions asked</label>
+            <label>
+              <input name="user-recommend" value="maybe" type="radio" class="input-radio"/>maybe, but ill ask why</label>
+            <label>
+              <input name="user-recommend" value="not-sure" type="radio" class="input-radio"/>no</label>
+          </div>
+      
+      <div class="form-group">
+            <p>what would you like to see improved? check all that apply</p>
+        <label>
+          <input name="prefer" value="hair" type="checkbox" class="input-checkbox"/>hairstyle</label>
+        <label>
+          <input name="prefer" value="caffine-addition" type="checkbox" class="input-checkbox"/>caffine addition</label>
+        <label>
+          <input name="prefer" value="lack-of-sleep" type="checkbox" class="input-checkbox"/>lack of sleep</label>
+          </div>
+          <div class="form-group">
+            <p>any comments or suggestions?</p>
+            <textarea id="comments" class="input-textarea" name="comment" placeholder="enter your comment here..."
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" id="submit" class="submit-button"> Submit </button>
+          </div>
+        </form>
+      </div>
+</body>
+</html>
