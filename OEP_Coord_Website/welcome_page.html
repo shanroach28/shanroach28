@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+html {
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: auto;
+  height: 100vh;
+}
+
+section:nth-of-type(even) {
+  color: #6C584C;
+  background: #ADC178;
+}
+
+section:nth-of-type(odd) {
+  color: #ADC178;
+  background: #6C584C;
+}
+
+#para {
+  font-size: 1.5rem;
+  font-style: italic;
+  text-align: center;
+  max-width: 1050px;
+  
+}
+
+#welcome{
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  font-size: 4rem;
+}
+:root{
+--borderRadius: 36px;
+}
+.button {
+  display: flex;
+  overflow: hidden;
+
+  margin: 10px;
+  padding: 12px 12px;
+
+  cursor: pointer;
+  user-select: none;
+  transition: all 150ms linear;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none !important;
+  text-transform: none;
+  text-transform: capitalize;
+
+  color: #fff;
+  border: 0 none;
+  border-radius: var(--borderRadius);
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;
+ 
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 160px;
+  
+  box-shadow: 2px 5px 10px var(--color-smoke);
+
+  &:hover{
+    transition: all 150ms linear;
+    opacity: .85;
+  }
+  &:active {
+    transition: all 150ms linear;
+    opacity: .75;
+  }
+  &:focus {
+    outline: 1px dotted #959595;
+    outline-offset: -4px;
+  }
+}
+
+.button.-regular {
+  color: #F0EAD2;
+  background-color: #6C584C;
+  
+  &:hover {
+    color: #A98467;
+    background-color: #DDE5B6;
+    opacity: 1;
+  }
+  
+  &:active {
+    background-color: #DDE5B6;
+    opacity: 1;
+  }
+}
+
+.container {  
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  padding: 0;
+}
+.button-container {
+    display: flex;
+
+    margin: 60px auto;
+
+    flex-wrap: wrap;
+    justify-content: center;
+}
+</style>
+<body>
+    <section id="welcome">
+        <h1>Welcome New OEP Coordinator!</h1>
+      </section>
+      <section class="container">
+        <p id="para">There are many responsibilities the coordinator has, however, one of the most important tasks a coordinator is solely responsible for, planning all the trips! When planning, always look back into past semesters schedules to get an idea of what trips to hold and how many a semester. Unfortunately in the past few years due to the pandemic, not as many trips have been able to run, so the experience on successful trips has not been gained. So here is as much knowledge I can give as possible!</p>
+       <div class="button-container">
+         <div class='button -regular center'>Get Started</div>
+      </section>
+</body>
+</html>
