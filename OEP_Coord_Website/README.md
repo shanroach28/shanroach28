@@ -1,0 +1,1 @@
+This is a personal project for my current job, i have worked this poistion for 3 years but have been with the department for 5, so i am trying to make a website that harbors all the knowledge i have on our department for the future workers to look at when they need assistance.
