@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(3,0,57);
+background: linear-gradient(180deg, rgba(3,0,57,1) 27%, rgba(9,14,121,1) 50%, rgba(91,0,255,1) 85%);
+}
+
+.sun {
+  width: 200px;
+  height: 200px;
+  background: rgb(255,151,0);
+background: linear-gradient(180deg, rgba(255,151,0,1) 30%, rgba(211,0,255,1) 90%);
+  border-radius: 50%;
+  box-shadow: 0 10px 100px 10px #d300ff;
+  position: relative;
+  overflow: hidden;
+}
+
+.lines1, 
+.lines1::before,
+.lines1::after,
+.lines2 {
+  width: 100%;
+  height: 3px;
+  background: rgb(212,224,255);
+background: radial-gradient(circle, rgba(212,224,255,0.9346332282913166) 0%, rgba(60,8,187,1) 70%);
+  position: absolute;
+  bottom: 20px;
+}
+
+.lines1::before {
+  content: "";
+  bottom: 38px;
+  height: 3px;
+}
+
+.lines1::after {
+  content: "";
+  bottom: px;
+  height: 3px
+}
+
+.lines2 {
+  bottom: 75px;
+  height: 3px
+}
+</style>
+<body>
+    <div class="sun">
+        <div class="lines1"></div>
+        <div class="lines2"></div>
+      </div>
+</body>
+</html>
